@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+    <title>自我介紹</title>
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+        }
+    
+        .top-bar {
+          background-color:orange; /* 你想要的顏色 */
+          height: 50px;
+          display: flex;
+        }
+
+        .content-box {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease; /* 動畫效果 */
+        }
+        .content-box:hover {
+            background-color:#ffd700; /* 鼠標懸停時的顏色 */
+        }
+        #displayMessage {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+      </style>
+    </head>
+    <body>
+        <div class="top-bar">
+            <div class="content-box" onclick="showMessage(0)">
+              <div>首頁</div>
+            </div>
+          
+            <div class="content-box" onclick="showMessage(1)">
+              <div>個人經驗</div>
+            </div>
+          
+            <div class="content-box" onclick="showMessage(2)">
+              <div>完成的項目</div>
+            </div>
+        </div>
+        <div id="displayMessage"></div>
+        <script>
+            const messages = [
+                '這是首頁',
+                '沒經驗所以沒什麼好放的',
+                '沒有完成任何項目'
+            ];
+            function showMessage(index) {
+                document.getElementById('displayMessage').innerHTML = `<p>${messages[index]}</p>`;
+            }
+        </script>
+    </body>
+</html>
