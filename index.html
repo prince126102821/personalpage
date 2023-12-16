@@ -1,65 +1,131 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-        <meta charset="utf-8"/>
-    <title>自我介紹</title>
-    <style>
-        body {
-          margin: 0;
-          padding: 0;
-        }
-    
-        .top-bar {
-          background-color:orange; /* 你想要的顏色 */
-          height: 50px;
-          display: flex;
-        }
+<head>
 
-        .content-box {
-            flex: 1;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s ease; /* 動畫效果 */
-        }
-        .content-box:hover {
-            background-color:#ffd700; /* 鼠標懸停時的顏色 */
-        }
-        #displayMessage {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 18px;
-        }
-      </style>
-    </head>
-    <body>
-        <div class="top-bar">
-            <div class="content-box" onclick="showMessage(0)">
-              <div>首頁</div>
-            </div>
-          
-            <div class="content-box" onclick="showMessage(1)">
-              <div>個人經驗</div>
-            </div>
-          
-            <div class="content-box" onclick="showMessage(2)">
-              <div>完成的項目</div>
-            </div>
-        </div>
-        <div id="displayMessage"></div>
-        <script>
-            const messages = [
-                '這是首頁',
-                '沒經驗所以沒什麼好放的',
-                '沒有完成任何項目'
-            ];
-            function showMessage(index) {
-                document.getElementById('displayMessage').innerHTML = `<p>${messages[index]}</p>`;
-            }
-        </script>
-    </body>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="utf-8"/>
+
+  <title>自我介紹</title>
+
+  <style>
+
+    /*建立網頁最上面那條橘色的區塊*/
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-bar {
+      background-color: orange;
+      height: 50px;
+      display: flex;
+    }
+
+    /*建立方塊*/
+    .content-box {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+
+    /*鼠標碰到後顯示其他顏色*/
+    .content-box:hover {
+      background-color: #ffd700;
+    }
+    
+    /* 定義下拉菜單樣式 */
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: orange;
+      display: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 在內容方塊懸停時，顯示下拉菜單 */
+    .content-box:hover .dropdown {
+      display: block;
+    }
+
+    /* 定義下拉菜單項目樣式 */
+    .dropdown-item {
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    /* 鼠標懸停時，變更下拉菜單項目的背景色 */
+    .dropdown-item:hover {
+      background-color: #bdc3c7;
+    }
+
+    /* 顯示內容的區域 */
+    #displayMessage {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 頂部橘色區塊包含三個方塊 -->
+  <div class="top-bar">
+
+    <div class="content-box">
+      <div>首頁</div>
+    </div>
+
+    <div class="content-box">
+      <div>個人經驗</div>
+      <!-- 個人經驗方塊內含下拉菜單 -->
+      <div class="dropdown">
+        <div class="dropdown-item" onclick="experienceMessage(0);showPhoto()">FRC 7636電資組成員</div>
+        <!-- 可以加入更多選項 -->
+      </div>
+    </div>
+
+    <div class="content-box">
+      <div>完成的項目</div>
+    </div>
+
+  </div>
+  
+  <!-- 顯示內容的區域 --><!--align讓文字置中-->
+  <div id="displayepsMessage" align="center"></div>
+  <!--加入照片-->
+  <img id="visiblePhoto" style="display: none;" src="mohuan.png">
+  <script>
+
+    // 定義顯示的訊息
+    const epsmessages = [
+      '這是首頁',
+      '沒經驗所以沒什麼好放的',
+      '沒有完成任何項目'
+    ];
+
+    // 顯示個人經驗相關的訊息
+    function experienceMessage(index, subMessage) {
+      if (typeof subMessage === 'undefined') {
+        document.getElementById('displayepsMessage').innerHTML = `<p>${epsmessages[index]}</p>`;
+      }
+    }
+
+    function showPhoto() {
+      document.getElementById('visiblePhoto').style.display = 'block';
+    }
+
+    function hidePhoto() {
+      document.getElementById('visiblePhoto').style.display = 'none';
+    }
+  </script>
+</body>
 </html>
