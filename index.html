@@ -1,131 +1,196 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
 
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta charset="utf-8"/>
 
-  <title>自我介紹</title>
+    <title>自我介紹</title>
 
-  <style>
+    <style>
 
-    /*建立網頁最上面那條橘色的區塊*/
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .top-bar {
-      background-color: orange;
-      height: 50px;
-      display: flex;
-    }
-
-    /*建立方塊*/
-    .content-box {
-      flex: 1;
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s ease;
-      position: relative;
-    }
-
-    /*鼠標碰到後顯示其他顏色*/
-    .content-box:hover {
-      background-color: #ffd700;
-    }
-    
-    /* 定義下拉菜單樣式 */
-    .dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: orange;
-      display: none;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    /* 在內容方塊懸停時，顯示下拉菜單 */
-    .content-box:hover .dropdown {
-      display: block;
-    }
-
-    /* 定義下拉菜單項目樣式 */
-    .dropdown-item {
-      padding: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    /* 鼠標懸停時，變更下拉菜單項目的背景色 */
-    .dropdown-item:hover {
-      background-color: #bdc3c7;
-    }
-
-    /* 顯示內容的區域 */
-    #displayMessage {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 18px;
-    }
-
-  </style>
-</head>
-<body>
-  <!-- 頂部橘色區塊包含三個方塊 -->
-  <div class="top-bar">
-
-    <div class="content-box">
-      <div>首頁</div>
-    </div>
-
-    <div class="content-box">
-      <div>個人經驗</div>
-      <!-- 個人經驗方塊內含下拉菜單 -->
-      <div class="dropdown">
-        <div class="dropdown-item" onclick="experienceMessage(0);showPhoto()">FRC 7636電資組成員</div>
-        <!-- 可以加入更多選項 -->
-      </div>
-    </div>
-
-    <div class="content-box">
-      <div>完成的項目</div>
-    </div>
-
-  </div>
-  
-  <!-- 顯示內容的區域 --><!--align讓文字置中-->
-  <div id="displayepsMessage" align="center"></div>
-  <!--加入照片-->
-  <img id="visiblePhoto" style="display: none;" src="mohuan.png">
-  <script>
-
-    // 定義顯示的訊息
-    const epsmessages = [
-      '這是首頁',
-      '沒經驗所以沒什麼好放的',
-      '沒有完成任何項目'
-    ];
-
-    // 顯示個人經驗相關的訊息
-    function experienceMessage(index, subMessage) {
-      if (typeof subMessage === 'undefined') {
-        document.getElementById('displayepsMessage').innerHTML = `<p>${epsmessages[index]}</p>`;
+      /*建立網頁最上面那條橘色的區塊*/
+      body {
+        margin: 0;
+        padding: 0;
       }
-    }
 
-    function showPhoto() {
-      document.getElementById('visiblePhoto').style.display = 'block';
-    }
+      .top-bar {
+        background-color: orange;
+        height: 50px;
+        display: flex;
+      }
 
-    function hidePhoto() {
-      document.getElementById('visiblePhoto').style.display = 'none';
-    }
-  </script>
-</body>
+      /*建立方塊*/
+      .content-box {
+        flex: 1;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        position: relative;
+      }
+
+      /*鼠標碰到後顯示其他顏色*/
+      .content-box:hover {
+        background-color: #ffd700;
+      }
+      
+      /* 定義下拉菜單樣式 */
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: orange;
+        display: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* 在內容方塊懸停時，顯示下拉菜單 */
+      .content-box:hover .dropdown {
+        display: block;
+      }
+
+      /* 定義下拉菜單項目樣式 */
+      .dropdown-item {
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      /* 鼠標懸停時，變更下拉菜單項目的背景色 */
+      .dropdown-item:hover {
+        background-color: #bdc3c7;
+      }
+
+      /* 顯示內容的區域 */
+      #displayMessage {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 18px;
+      }
+
+      .appinventor-body{
+            margin: 0;
+            padding: 0;
+            background-color: #ccc; /* 灰色背景 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+      }
+
+      .appinventor-white-square {
+            width: 95%; /* 调整正方形宽度 */
+            height: 100%; /* 调整正方形高度 */
+            background-color: #fff; /* 白色背景 */
+            align-items: center;
+        }
+
+        .display-flex {
+          display: flex;
+        }
+
+      .display-none {
+          display: none;
+        }
+
+    </style>
+  </head>
+  <body>
+    <!-- 頂部橘色區塊包含三個方塊 -->
+    <div class="top-bar">
+
+      <div id="homepageblock" class="content-box" onclick="homepage();homepageblock();">
+        <div>首頁</div>
+      </div>
+
+      <div id="experienceblock" class="content-box" onclick="experienceblock();">
+        <div>個人經驗</div>
+        <!-- 個人經驗方塊內含下拉菜單 -->
+        <div class="dropdown">
+          <div class="dropdown-item">FRC 7636電資組成員</div>
+          <!-- 可以加入更多選項 -->
+        </div>
+      </div>
+
+     <div id="finishblock" class="content-box" onclick="finishblock();">
+        <div>完成的項目</div>
+        <!-- 個人經驗方塊內含下拉菜單 -->
+        <div class="dropdown">
+          <div class="dropdown-item" onclick="appinventor()">App Inventor 股票爬取製作</div>
+        </div>
+     </div>
+
+    </div>
+
+    <div class="appinventor-body" id="appinventor" style="display: none;">
+        <div class="appinventor-white-square">
+            <img style="padding: 50px;" src="blocks (1).png"/>
+            <img style="padding: 50px;" src="blocks (2).png"/>
+            <img style="padding: 50px;" src="blocks (3).png"/>
+            <img style="padding: 50px;" src="blocks (4).png"/>
+            <img style="padding: 50px;" src="blocks (5).png"/>
+            <img style="padding: 50px;" src="blocks (6).png"/>
+            <img style="padding: 50px;" src="blocks (7).png"/>
+            <img style="padding: 50px;" src="blocks (8).png"/>
+            <img style="padding: 50px;" src="blocks (9).png"/>
+            <img style="padding: 50px;" src="blocks (10).png"/>
+            <img style="padding: 50px;" src="blocks (11).png"/>
+            <img style="padding: 50px;" src="blocks (12).png"/>
+            <img style="padding: 50px;" src="blocks (13).png"/>
+        </div>
+    </div>
+
+    <script>
+
+        let appinventordiv=document.querySelector("#appinventor");
+
+        function homepageblock() {
+            let element = document.getElementById("homepageblock");
+            let otherElement = document.getElementById("experienceblock");
+            // 移除可能存在的另一個類
+            otherElement.classList.remove("display-flex");
+            // 移除可能存在的另一個類
+            element.classList.remove("display-none");
+            // 切換類
+            element.classList.add("display-flex");
+        }
+
+        function experienceblock() {
+            let element = document.getElementById("experienceblock");
+            let otherElement = document.getElementById("homepageblock");
+            // 移除可能存在的另一個類
+            otherElement.classList.remove("display-flex");
+            // 移除可能存在的另一個類
+            element.classList.remove("display-none");
+            // 切換類
+            element.classList.add("display-flex");
+        }
+
+        function finishblock() {
+            let element = document.getElementById("finishblock");
+            let otherElement = document.getElementById("homepageblock");
+            // 移除可能存在的另一個類
+            otherElement.classList.remove("display-flex");
+            // 移除可能存在的另一個類
+            element.classList.remove("display-none");
+            // 切換類
+            element.classList.add("display-flex");
+        }
+
+        function appinventor(){
+            appinventordiv.style.display="flex";
+        }
+
+        function homepage() {
+            appinventordiv.style.display="none";
+        }
+    </script>
+
+  </body>
 </html>
