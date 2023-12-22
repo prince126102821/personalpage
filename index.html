@@ -130,16 +130,29 @@
 
     <div class="appinventor-body" id="appinventor" style="display: none;">
         <div class="appinventor-white-square">
-            <img style="padding: 50px;" src="blocks (1).png"/>
+          <!--display:flex將容器設為flexbox屬性 <span>包裹這要放置的文字-->
+          <!--最上方標籤-->
+          <div style="display: flex; align-items: center; justify-content: center; text-align: center; font-size: 50px; background-color: rgb(25, 206, 206); margin: 30px;">
+            <img src="app inventor.png" alt="App Inventor" style="margin-right: 10px; max-height: 80px;">
+            <span style="font-size: 30px; padding: 50px;">App Inventor股票爬取製作</span>
+          </div>
+
+          <!--告訴使用者有甚麼內容-->
+          <ul style="list-style-type: none; text-align: center; font-size: 30px;">
+            製作結構
+            <li><a href="https://www.twse.com.tw/exchangeReport/STOCK_DAY?date=20231220&stockNo=2330">開啟證交所連結</a></li>
+            <li>拉取所需物件</li>
+            <li>定義變數</li>
+            <li>建立標題</li>
+            <li>開始codeing</li>
+          </ul>
+
+          <!--代碼照片及解釋-->
+          <div style="display: flex; font-size: 50px; align-items: center;">
             <img style="padding: 50px;" src="blocks (2).png"/>
-            <img style="padding: 50px;" src="blocks (3).png"/>
-            <img style="padding: 50px;" src="blocks (4).png"/>
-            <img style="padding: 50px;" src="blocks (5).png"/>
-            <img style="padding: 50px;" src="blocks (6).png"/>
-            <img style="padding: 50px;" src="blocks (7).png"/>
-            <img style="padding: 50px;" src="blocks (8).png"/>
-            <img style="padding: 50px;" src="blocks (9).png"/>
-            <img style="padding: 50px;" src="blocks (10).png"/>
+            <span>定義變數</span>
+          </div>
+            <img style="padding: 50px;" src="blocks (1).png"/>
             <img style="padding: 50px;" src="blocks (11).png"/>
             <img style="padding: 50px;" src="blocks (12).png"/>
             <img style="padding: 50px;" src="blocks (13).png"/>
@@ -150,6 +163,7 @@
 
         let appinventordiv=document.querySelector("#appinventor");
 
+        //使手機板可以用點擊的
         function homepageblock() {
             let element = document.getElementById("homepageblock");
             let otherElement = document.getElementById("experienceblock");
@@ -183,10 +197,12 @@
             element.classList.add("display-flex");
         }
 
+        //點選app inventor股票抓取顯示內文
         function appinventor(){
             appinventordiv.style.display="flex";
         }
 
+        //點選首頁將其他內文關閉顯示首頁內容
         function homepage() {
             appinventordiv.style.display="none";
         }
