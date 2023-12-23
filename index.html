@@ -115,6 +115,28 @@
         object-fit: cover; /* 保持圖片比例並填充整個區域 */
       }
 
+      /*讓文字變直的*/
+      .vertical-text {
+        writing-mode: vertical-lr; /*讓文字從左到右*/
+        text-orientation: upright; /* 讓文字保持正立 */
+        white-space: nowrap; /* 避免文字換行 */
+        font-size: 20px; /* 調整字體大小 */
+        position: absolute; /* 使用絕對定位 */
+        padding-left: 300px;
+        margin-top: -300px;
+        font-size: 40px;
+    }
+
+    /*具備能力旁邊的列表*/
+    .list {
+      list-style: none;
+      position: absolute; /* 使用絕對定位 */
+      padding-left: 380px;
+      margin-top: -290px;
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
+
     </style>
   </head>
   <body>
@@ -159,6 +181,16 @@
         <div style="margin-top: -40px; margin-left: 50px;"><a href="https://github.com/prince126102821?tab=repositories"> My GitHub</a></div>
       </div>
     </div>
+    <div class="display-flex">
+      <div class="vertical-text">具備能力</div>
+      <ul class="list">
+        <li>Python</li>
+        <li>Java</li>
+        <li>HTML</li>
+        <li>JavaScript</li>
+      </ul>
+    </div>
+
     <!--完成項目app inventor內容-->
     <div class="appinventor-body" id="appinventor" style="display: none;">
         <div class="appinventor-white-square">
