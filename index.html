@@ -98,6 +98,22 @@
       .display-none {
           display: none;
         }
+      
+      /* 定義圓角方塊的樣式 */
+      .rounded-box {
+            width: 200px; /* 寬度 */
+            height: 250px; /* 高度 */
+            border-radius: 15px; /* 圓角半徑 */
+            overflow: hidden; /* 超出部分隱藏 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 陰影效果 */
+            border: 5px solid #8B4513; /* 邊框，咖啡色 */
+      }
+
+      .rounded-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 保持圖片比例並填充整個區域 */
+      }
 
     </style>
   </head>
@@ -125,9 +141,25 @@
           <div class="dropdown-item" onclick="appinventor()">App Inventor 股票爬取製作</div>
         </div>
      </div>
-
     </div>
 
+    <!--首頁內容-->
+    <div id="homepage" style="display: flex; padding: 30px;">
+      <div style="display: flexbox;">
+        <img class="rounded-box" src="mypicture.jpg"/>
+      </div>
+    </div>
+    <div id="homepageconnection" style="padding-left: 20px; display: flex; flex-direction: column;">
+      <div>
+        <img src="gmail.jpg" />
+        <div style="margin-top: -40px; margin-left: 50px;">princechiballball@gmail.com</div>
+      </div>
+      <div style="padding-top: 15px;">
+        <img src="github.png"/>
+        <div style="margin-top: -40px; margin-left: 50px;"><a href="https://github.com/prince126102821?tab=repositories"> My GitHub</a></div>
+      </div>
+    </div>
+    <!--完成項目app inventor內容-->
     <div class="appinventor-body" id="appinventor" style="display: none;">
         <div class="appinventor-white-square">
           <!--display:flex將容器設為flexbox屬性 <span>包裹這要放置的文字-->
@@ -162,6 +194,8 @@
     <script>
 
         let appinventordiv=document.querySelector("#appinventor");
+        let homepagediv=document.querySelector("#homepage");
+        let homepageconnectiondiv=document.querySelector("#homepageconnection");
 
         //使手機板可以用點擊的
         function homepageblock() {
@@ -200,11 +234,15 @@
         //點選app inventor股票抓取顯示內文
         function appinventor(){
             appinventordiv.style.display="flex";
+            homepagediv.style.display="none";
+            homepageconnectiondiv.style.display="none";
         }
 
         //點選首頁將其他內文關閉顯示首頁內容
         function homepage() {
             appinventordiv.style.display="none";
+            homepagediv.style.display="flex";
+            homepageconnectiondiv.style.display="flex";
         }
     </script>
 
