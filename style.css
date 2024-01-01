@@ -1,0 +1,138 @@
+/*建立網頁最上面那條橘色的區塊*/
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .top-bar {
+    background-color: orange;
+    height: 50px;
+    display: flex;
+  }
+
+  /*建立方塊*/
+  .content-box {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    position: relative;
+  }
+
+  /*鼠標碰到後顯示其他顏色*/
+  .content-box:hover {
+    background-color: #ffd700;
+  }
+  
+  /* 定義下拉菜單樣式 */
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: orange;
+    display: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 在內容方塊懸停時，顯示下拉菜單 */
+  .content-box:hover .dropdown {
+    display: block;
+  }
+
+  /* 定義下拉菜單項目樣式 */
+  .dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  /* 鼠標懸停時，變更下拉菜單項目的背景色 */
+  .dropdown-item:hover {
+    background-color: #bdc3c7;
+  }
+
+  /* 顯示內容的區域 */
+  #displayMessage {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  .appinventor-body{
+        margin: 0;
+        padding: 0;
+        background-color: #ccc; /* 灰色背景 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+  }
+
+  .appinventor-white-square {
+        width: 95%; /* 调整正方形宽度 */
+        height: 100%; /* 调整正方形高度 */
+        background-color: #fff; /* 白色背景 */
+        align-items: center;
+    }
+
+    .display-flex {
+      display: flex;
+    }
+
+  .display-none {
+      display: none;
+    }
+  
+  /* 定義圓角方塊的樣式 */
+  .rounded-box {
+        width: 200px; /* 寬度 */
+        height: 250px; /* 高度 */
+        border-radius: 15px; /* 圓角半徑 */
+        overflow: hidden; /* 超出部分隱藏 */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 陰影效果 */
+        border: 5px solid #8B4513; /* 邊框，咖啡色 */
+  }
+
+  .rounded-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持圖片比例並填充整個區域 */
+  }
+
+  /*讓文字變直的*/
+  .vertical-text {
+    writing-mode: vertical-lr; /*讓文字從左到右*/
+    text-orientation: upright; /* 讓文字保持正立 */
+    white-space: nowrap; /* 避免文字換行 */
+    font-size: 20px; /* 調整字體大小 */
+    position: absolute; /* 使用絕對定位 */
+    padding-left: 300px;
+    margin-top: -350px;
+    font-size: 40px;
+}
+
+/*具備能力旁邊的列表*/
+.list {
+  list-style: none;
+  position: absolute; /* 使用絕對定位 */
+  padding-left: 380px;
+  margin-top: -340px;
+  font-size: 30px;
+}
+
+/*設定背景圖片透明度*/
+.transparent-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3; /* 調整透明度，0 為完全透明，1 為完全不透明 */
+  pointer-events: none; /* 使透明層不擋住頁面上方元素的點擊事件 */
+  z-index: -1; /* 將透明層放置在頁面底層 */
+}
